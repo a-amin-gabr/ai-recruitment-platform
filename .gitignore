@@ -1,0 +1,14 @@
+# Keep local specification PDF out of the public repository
+AI_Recruitment_Platform_Master_Specification.pdf
+
+# Secrets & environment files
+.env
+.env.*
+*.pem
+*.key
+
+# OS & editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
