@@ -1,6 +1,8 @@
-# Meeting Guide: Abdallah + Karim Decision Meeting
+# Meeting Guide: Company Pitch & Decisions (Led by Karim)
 
-**Goal of the meeting:** leave with a **locked tech stack**, a **clear ownership split**, a **budget**, and a **6-week plan** for the prototype the company will evaluate.
+**Team Lead / Meeting Representative:** **Karim Ehab (Team Lead)** will attend the company meeting alone to align on business scope, confirm company requirements, and lock key decisions on behalf of the team (Karim Ehab & Abdallah Gabr).
+
+**Goal of the meeting:** leave with a **locked tech stack**, **confirmed company scope & demo date**, a **clear ownership split**, a **budget**, and a **6-week execution plan** for the prototype the company will evaluate.
 
 **Duration:** about 3 hours (with a break). Decide things in this order: later decisions depend on earlier ones.
 
@@ -33,7 +35,7 @@ flowchart LR
 
 ---
 
-## Questions we must answer in this meeting
+## Questions Karim should confirm in the meeting
 
 ### Business & scope
 - [ ] **Demo date?** The roadmap assumes 6 weeks. Is that realistic?
@@ -57,10 +59,10 @@ flowchart LR
 - [ ] **Default ranking weights** per job level: accept the table in ADR-011 or change it?
 
 ### Process
-- [ ] Git hosting & branch strategy (GitHub, trunk-based, PR review by the other person).
+- [ ] Git hosting & branch strategy (GitHub, trunk-based, cross-review between Karim & Abdallah).
 - [ ] Task tracking (GitHub Projects / Linear / Jira).
-- [ ] Weekly sync day + demo-to-each-other day.
-- [ ] Who talks to the company, and how often?
+- [ ] Weekly team sync day + demo milestone review.
+- [ ] Company communication cadence & follow-up schedule (led by **Karim** as Team Lead).
 
 ---
 
@@ -69,7 +71,7 @@ flowchart LR
 - [ ] All 20 ADRs marked ✅ / 🔁 / ⏸️ in [README.md](README.md)
 - [ ] Budget cap agreed: \_\_\_\_\_\_ USD/month
 - [ ] Demo date agreed: \_\_\_\_\_\_\_\_\_\_
-- [ ] Cloud accounts: AWS account owner \_\_\_\_\_\_ · Azure subscription owner \_\_\_\_\_\_ · Pinecone org owner \_\_\_\_\_\_
+- [ ] Cloud accounts: Azure subscription owner \_\_\_\_\_\_ · AWS account owner \_\_\_\_\_\_ · Pinecone org owner \_\_\_\_\_\_
 - [ ] Azure OpenAI access + quota requested (can take days; **do this first**)
 - [ ] Credits applications assigned
 - [ ] Week-1 tasks assigned (see [04-roadmap.md](04-roadmap.md))

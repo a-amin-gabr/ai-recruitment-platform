@@ -3,7 +3,7 @@
 | Field | Value |
 |---|---|
 | Status | 🟡 Proposed |
-| Owner | Abdallah (with Karim) |
+| Owner | Karim (Team Lead review) · Abdallah (implementation) |
 | Reversal cost | Low |
 
 ## Context

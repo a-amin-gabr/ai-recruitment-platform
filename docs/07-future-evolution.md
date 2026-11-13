@@ -21,7 +21,7 @@ flowchart LR
     subgraph P3["Stage 3: Full Startup + Phase 2 (Months 5+)"]
         S3A["Socket.io Desktop QR Pairing"]
         S3B["Mobile Web 360° Room Scan (Camera + Gyroscope)"]
-        S3C["Real-Time Voice Interview Agent (<800ms)"]
+        S3C["Real-Time Voice Interview Agent (under 800ms)"]
         S3D["Batch Video Analysis Workers + Multi-Modal Score Fusion"]
     end
 
@@ -69,15 +69,16 @@ sequenceDiagram
     participant S3 as S3 Multipart + 30-Day Lifecycle
 
     Note over Desk,Phone: Replaces Flutter completely using Mobile Web APIs
-    Desk->>API: Open interview lobby -> generate time-limited QR
-    Phone->>Desk: Scan QR -> opens /room-scan/[token]
+    Desk->>API: Open interview lobby → generate time-limited QR
+    Phone->>Desk: Scan QR → opens /room-scan/[token]
     Phone->>Phone: WebRTC Camera + DeviceOrientationEvent (360° ring)
     Phone->>AI: Send sampled frames + desk check photo
     AI-->>API: RoomVerified
-    API-->>Desk: Socket.io push -> auto-refresh to Rules & Countdown
-    Desk<-->AI: Real-time Voice Agent (WebSocket PCM Audio <800ms)
+    API-->>Desk: Socket.io push → auto-refresh to Rules & Countdown
+    Desk->>AI: Stream real-time voice audio (WebSocket PCM under 800ms)
+    AI-->>Desk: Stream AI interviewer voice response
     Desk->>S3: Direct presigned multipart upload (Video + Audio)
-    S3-->>API: Event -> enqueue scheduled nightly batch analysis
+    S3-->>API: Event → enqueue scheduled nightly batch analysis
     AI->>API: 5-section report + Multi-Modal Score Fusion (CV + Interview)
 ```
 

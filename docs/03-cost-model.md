@@ -108,11 +108,9 @@
 ## 3. Monthly scenarios
 
 ```mermaid
-xychart-beta
-    title "Estimated monthly cost (USD)"
-    x-axis ["Prototype 2k CVs", "Pilot 20k CVs", "Early SaaS 200k CVs"]
-    y-axis "USD per month" 0 --> 1800
-    bar [70, 260, 1600]
+flowchart LR
+    P["Prototype (2k CVs/mo): USD 45-85/mo (~USD 0.03/CV)"] -->|"Scale 10x"| Pi["Pilot (20k CVs/mo): USD 220-320/mo (~USD 0.013/CV)"]
+    Pi -->|"Scale 10x"| ES["Early SaaS (200k CVs/mo): USD 1,500-2,000/mo (~USD 0.008/CV)"]
 ```
 
 | Item | Prototype (2k CVs/mo) | Pilot (20k CVs/mo, 1 customer) | Early SaaS (200k CVs/mo) |

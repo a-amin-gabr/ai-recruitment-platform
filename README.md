@@ -1,6 +1,6 @@
 # AI Recruitment Platform — Architecture & Decision Docs
 
-**Team:** Abdallah Gabr (Full-Stack, Cloud & DevOps) · Karim Ehab (AI/NLP Lead)  
+**Team:** Karim Ehab (Team Lead · AI/NLP) · Abdallah Gabr (Full-Stack, Cloud & DevOps)  
 **Scope:** Phase 1 Prototype — Explainable Multi-Channel CV Aggregation & Top-N Ranking  
 **Stack:** Next.js + NestJS + PostgreSQL/S3/SQS (AWS `us-east-1`) · Python FastAPI + Azure OpenAI + Document Intelligence (Azure `East US 2`) · Pinecone + Langfuse
 
@@ -11,7 +11,7 @@
 ## Start Here
 
 - **[docs/README.md](docs/README.md)** — Full document index and 20-ADR decision log
-- **[docs/00-meeting-guide.md](docs/00-meeting-guide.md)** — Decision meeting agenda, time boxes, and sign-off checklist
+- **[docs/00-meeting-guide.md](docs/00-meeting-guide.md)** — Company pitch & decision meeting guide (led by **Karim**), time boxes, and sign-off checklist
 - **[docs/01-vision-and-scope.md](docs/01-vision-and-scope.md)** — Pitch, prototype scope, and quantitative demo targets
 - **[docs/02-architecture-overview.md](docs/02-architecture-overview.md)** — Multi-cloud AWS + Azure architecture, ingestion flow, and ranking flow
 - **[docs/03-cost-model.md](docs/03-cost-model.md)** — Itemized pricing across Prototype (~\$45–85/mo), Pilot, and Early SaaS

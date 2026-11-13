@@ -1,8 +1,8 @@
 # Prototype Decision Docs: AI CV Aggregation & Ranking
 
-**Team:** Karim Ehab (AI/NLP lead) · Abdallah Gabr (Full-Stack, Cloud & DevOps)
+**Team:** Karim Ehab (Team Lead, AI/NLP) · Abdallah Gabr (Full-Stack, Cloud & DevOps)
 **Scope:** Phase 1 prototype. Collect CVs from several channels, rank them, and show *why* each candidate got their score.
-**Status:** 🟡 Draft for the Abdallah + Karim decision meeting (2026-11-13)
+**Status:** 🟡 Ready for Karim (Team Lead) — Company Pitch & Decision Meeting (2026-11-13)
 
 > Prices are public list prices for **AWS `us-east-1`**, **Azure `East US 2`** and SaaS vendors, collected **Nov 2026**. Treat them as estimates. Check them again in the [AWS Pricing Calculator](https://calculator.aws/) and [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/) before quoting anything to the company.
 
@@ -34,7 +34,7 @@
 
 | ADR | Decision | Recommended option | Rough monthly cost (prototype) | Status |
 |---|---|---|---|---|
-| [001](decisions/001-team-and-ownership.md) | Team ownership split | Abdallah = AWS app + DevOps · Karim = Azure AI | — | 🟡 Proposed |
+| [001](decisions/001-team-and-ownership.md) | Team ownership split | Karim (Team Lead) = Azure AI · Abdallah = AWS app + DevOps | — | 🟡 Proposed |
 | [002](decisions/002-cloud-strategy.md) | Cloud strategy | AWS app layer + Azure AI layer, all in Northern Virginia | — | 🟡 Proposed |
 | [003](decisions/003-frontend-framework.md) | Frontend framework | Next.js + React + Tailwind + shadcn/ui | \$0 | 🟡 Proposed |
 | [004](decisions/004-backend-framework.md) | Backend framework | NestJS (TypeScript) + Prisma | \$0 | 🟡 Proposed |

@@ -10,6 +10,13 @@ flowchart LR
         Mail["Email forwarding"]
     end
 
+    subgraph Azure["Azure East US 2: AI Layer (Karim, Team Lead)"]
+        AI["FastAPI AI Service on Container Apps"]
+        AOAI["Azure OpenAI"]
+        DI["Document Intelligence"]
+        KV["Key Vault"]
+    end
+
     subgraph AWS["AWS us-east-1: Application Layer (Abdallah)"]
         Web["Next.js on Amplify Hosting"]
         Cognito["Cognito"]
@@ -19,13 +26,6 @@ flowchart LR
         SQS[["SQS + DLQ"]]
         RDS[("PostgreSQL 16 on RDS")]
         SES["SES inbound email"]
-    end
-
-    subgraph Azure["Azure East US 2: AI Layer (Karim)"]
-        AI["FastAPI AI Service on Container Apps"]
-        AOAI["Azure OpenAI"]
-        DI["Document Intelligence"]
-        KV["Key Vault"]
     end
 
     subgraph SaaS["SaaS, AWS us-east-1"]
@@ -53,11 +53,11 @@ flowchart LR
 
 ## 2. The one rule that makes multi-cloud manageable
 
-| | AWS side (NestJS) | Azure side (FastAPI) |
+| | Azure side (Karim, Team Lead — FastAPI) | AWS side (Abdallah — NestJS) |
 |---|---|---|
-| Owns | Tenants, users, jobs, candidates, files, ranking history, shortlists, audit log | All AI logic: parse, extract, embed, retrieve, score, explain |
-| State | **Stateful**: PostgreSQL + S3 | **Stateless**: only writes to Pinecone (a derived, rebuildable index) |
-| Talks to the other side | Calls the AI service over a versioned REST contract (`/v1/...`) | Never connects to Postgres; gets files via 5-minute presigned URLs |
+| Owns | All AI logic: parse, extract, embed, retrieve, score, explain | Tenants, users, jobs, candidates, files, ranking history, shortlists, audit log |
+| State | **Stateless**: only writes to Pinecone (a derived, rebuildable index) | **Stateful**: PostgreSQL + S3 |
+| Talks to the other side | Never connects to Postgres; gets files via 5-minute presigned URLs | Calls the AI service over a versioned REST contract (`/v1/...`) |
 
 **Why it matters:** either side can move to the other cloud by changing adapters and Terraform only. If Pinecone is lost, re-run indexing from Postgres + S3.
 
@@ -115,9 +115,9 @@ sequenceDiagram
 ```text
 grad/
 ├── apps/
+│   ├── ai-service/   # Python FastAPI (Karim, Team Lead)
 │   ├── web/          # Next.js (Abdallah)
-│   ├── api/          # NestJS API + ingestion worker (Abdallah)
-│   └── ai-service/   # Python FastAPI (Karim)
+│   └── api/          # NestJS API + ingestion worker (Abdallah)
 ├── packages/
 │   └── shared/       # Shared TS types, Zod schemas, generated OpenAPI client
 ├── eval/             # Datasets, labels, evaluation scripts (Karim)

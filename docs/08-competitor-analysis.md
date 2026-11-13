@@ -28,7 +28,7 @@ flowchart TB
     end
 
     subgraph Ours["Our Platform: Glass-Box AI Screening"]
-        P1["Phase 1: Explainable Hybrid Ranking + Substring Quotes + Blind Scoring (<$0.01/CV)"]
+        P1["Phase 1: Explainable Hybrid Ranking + Substring Quotes + Blind Scoring (under $0.01/CV)"]
         P2["Phase 2: Zero-App Mobile 360° Room Scan + Voice Agent + Video Evidence"]
     end
 ```
@@ -71,7 +71,7 @@ flowchart TB
 
 ```mermaid
 flowchart LR
-    D1["1. Glass-Box Ranking: Fixed Formula + Verbatim CV Quotes"] --> Win["Defensible, Compliant AI Hiring at <$0.01/CV"]
+    D1["1. Glass-Box Ranking: Fixed Formula + Verbatim CV Quotes"] --> Win["Defensible, Compliant AI Hiring (under $0.01/CV)"]
     D2["2. Built-in Compliance: Blind Scoring + Fairness Swap Test + Audit Log"] --> Win
     D3["3. Arabic + English Hybrid + Scanned PDF Resilience"] --> Win
     D4["4. No Seat/Credit Trap: Works Alongside Any Existing ATS"] --> Win

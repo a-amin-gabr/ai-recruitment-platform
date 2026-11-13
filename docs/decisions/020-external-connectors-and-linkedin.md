@@ -3,7 +3,7 @@
 | Field | Value |
 |---|---|
 | Status | 🟡 Proposed |
-| Owner | Abdallah (connectors & webhooks) · Karim (payload normalization) |
+| Owner | Karim (Team Lead, payload normalization) · Abdallah (connectors & webhooks) |
 | Reversal cost | Low (all connectors normalize into the same `IngestSource` pipeline) |
 
 ## Context
@@ -29,7 +29,7 @@ There are **4 legitimate paths** for LinkedIn Easy Apply, ranging from 0-day pro
 ```mermaid
 flowchart LR
     subgraph Prototype["Now: Zero Partner Gate"]
-        LI1["LinkedIn Easy Apply Email Alert"] -->|"Forwards to jobs+slug@..."| SES["AWS SES Inbound -> S3 -> SQS"]
+        LI1["LinkedIn Easy Apply Email Alert"] -->|"Forwards to jobs+slug@..."| SES["AWS SES Inbound → S3 → SQS"]
         LI2["LinkedIn Export ZIP/CSV"] -->|"Drag and Drop"| BULK["Bulk Intake UI"]
         LI3["External Apply Link"] -->|"Redirect"| FORM["Public /jobs/slug"]
     end
@@ -43,7 +43,7 @@ flowchart LR
         LI5["LinkedIn Apply Connect API"] <-->|"Certified Partner Webhooks + Status Sync"| API["Our NestJS Connectors Module"]
     end
 
-    SES & BULK & FORM & UAPI & API --> NORM["Canonical Intake Pipeline (S3 + SQS -> FastAPI)"]
+    SES & BULK & FORM & UAPI & API --> NORM["Canonical Intake Pipeline (S3 + SQS → FastAPI)"]
 ```
 
 ---

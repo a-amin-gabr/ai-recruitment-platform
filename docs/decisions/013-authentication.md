@@ -31,7 +31,7 @@ sequenceDiagram
     participant API as NestJS API + AuthGuard
     participant DB as PostgreSQL
 
-    Cand->>Web: Open /jobs/[slug] -> Submit CV directly
+    Cand->>Web: Open /jobs/[slug] → Submit CV directly
     Web->>API: POST /public/jobs/[slug]/apply
     Rec->>Web: Open Recruiter Portal
     Web->>Cog: Redirect to Login (Email/Password + TOTP / future SAML)

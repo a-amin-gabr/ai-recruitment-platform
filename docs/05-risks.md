@@ -20,24 +20,21 @@ Likelihood and impact: **H** = high, **M** = medium, **L** = low.
 | R14 | Vendor or model deprecation (models retire every ~12 months on Azure) | M | L | Model name in config; eval harness re-run on model change | Karim |
 
 ```mermaid
-quadrantChart
-    title Risk map
-    x-axis Low likelihood --> High likelihood
-    y-axis Low impact --> High impact
-    quadrant-1 Act now
-    quadrant-2 Monitor closely
-    quadrant-3 Accept
-    quadrant-4 Reduce
-    R1 Quota: [0.55, 0.8]
-    R2 Hallucination: [0.5, 0.8]
-    R3 Parsing: [0.55, 0.75]
-    R4 Ranking quality: [0.5, 0.95]
-    R5 Pinecone limits: [0.25, 0.45]
-    R6 Complexity: [0.55, 0.5]
-    R7 Bill shock: [0.5, 0.5]
-    R8 Bias: [0.45, 0.8]
-    R9 PII leak: [0.2, 0.95]
-    R10 Demo failure: [0.2, 0.75]
+flowchart LR
+    subgraph ActNow["Critical & High Priority (Act Now)"]
+        R4["R4: Ranking vs Keyword Baseline (Karim)"]
+        R1["R1: Azure OpenAI Quota Delay (Karim)"]
+        R2["R2: Hallucinated CV Quotes (Karim)"]
+        R3["R3: Scanned / Arabic CV Parsing (Karim)"]
+    end
+    subgraph Guardrails["Security, Fairness & Demo Guardrails"]
+        R9["R9: CV PII Data Leak (Abdallah)"]
+        R8["R8: Scoring Bias / Fairness (Both)"]
+        R10["R10: Live Demo Outage (Abdallah)"]
+    end
+    subgraph Controls["Engineering & Budget Controls"]
+        R6["R6: Two-Cloud Complexity (Abdallah)"]
+        R7["R7: Cloud Bill Shock (Abdallah)"]
+        R5["R5: Pinecone Free-Tier Limits (Karim)"]
+    end
 ```
-
-> Note: `quadrantChart` needs a recent Mermaid version. If it doesn't render, use the table above.

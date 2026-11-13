@@ -45,11 +45,10 @@ Grades: 0 = not relevant, 1 = weak, 2 = good, 3 = excellent. Label only the pool
 ## Experiments to show
 
 ```mermaid
-xychart-beta
-    title "Target result shape: NDCG@10 by method (illustrative, not real data)"
-    x-axis ["Keyword BM25", "Dense only", "Hybrid", "Hybrid + features + evidence"]
-    y-axis "NDCG@10" 0 --> 1
-    bar [0.55, 0.62, 0.70, 0.80]
+flowchart LR
+    B1["Keyword BM25 Baseline (~0.55 NDCG@10)"] --> B2["Dense Vectors Only (~0.62 NDCG@10)"]
+    B2 --> B3["Hybrid Dense + Sparse (~0.70 NDCG@10)"]
+    B3 --> B4["Hybrid + Weighted Features + LLM Evidence (~0.80 NDCG@10)"]
 ```
 
 > [!WARNING]

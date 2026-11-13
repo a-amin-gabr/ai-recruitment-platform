@@ -4,7 +4,7 @@
 |---|---|
 | Status | 🟡 Proposed / ✅ Accepted / 🔁 Changed / ⏸️ Deferred / ❌ Superseded |
 | Date | YYYY-MM-DD |
-| Owner | Abdallah / Karim |
+| Owner | Karim / Abdallah |
 | Reversal cost | Low / Medium / High: how hard it is to change later |
 
 ## Context

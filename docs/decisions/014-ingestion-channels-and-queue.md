@@ -3,7 +3,7 @@
 | Field | Value |
 |---|---|
 | Status | 🟡 Proposed |
-| Owner | Abdallah (channels, queue) · Karim (processing) |
+| Owner | Karim (Team Lead, AI processing) · Abdallah (channels, queue) |
 | Reversal cost | Low |
 
 ## Context
